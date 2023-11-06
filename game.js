@@ -17,7 +17,19 @@ loadSprite('wall-gold', 'VtTXsgH.png');
 loadSprite('wall-wood', 'U751RRV.png');
 
 loadSprite('bomberman', 'T0xbHb8.png', {
-    anims:
+    SliceX: 7,
+    SliceY: 4,
+    anims: {
+        idleLeft: {from: 21, to: 21},
+        idleRigth: {from: 7, to: 7},
+        idleUp: {from: 0, to: 0},
+        idleDown: {from: 14, to: 14},
+
+        moveLeft: {from: 22, to: 27},
+        moveRigth: {from: 8, to: 13},
+        moveUp: {from: 1, to: 6},
+        moveDown: {from: 15, to: 20},
+    }
 });
 
 scene('game', () => {
@@ -59,6 +71,11 @@ scene('game', () => {
     }
 
     const gamelevel = addLevel(maps[a], levelCfg);
+
+    const player = add ([
+        sprite('bomberman')
+    ])
+
 })
 
 go('game');
