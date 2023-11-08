@@ -11,7 +11,7 @@ loadRoot('https://i.imgur.com/');
 loadSprite('wall-steel', 'EkleLlt.png');
 loadSprite('brick-red', 'C46n8aY.png');
 loadSprite('door', 'Ou9w4gH.png');
-loadSprite('kaboom', 'etY46bP.png');
+loadSprite('kaboom', 'o9WizfI.png');
 loadSprite('bg', 'qIXIczt.png');
 loadSprite('wall-gold', 'VtTXsgH.png');
 loadSprite('wall-wood', 'U751RRV.png');
@@ -54,7 +54,7 @@ scene('game', () => {
         'a            a',
         'a            a',
         'a            a',
-        'aaaaaaaaaaaaaa'
+        'aaaaaaaaaaaaaa',   
     ]
     ]
 
@@ -70,12 +70,16 @@ scene('game', () => {
         t: [sprite('door'), 'door', 'wall'],
     }
 
-    const gamelevel = addLevel(maps[a], levelCfg);
+    const gamelevel = addLevel(maps[0], levelCfg);
 
     const player = add ([
-        sprite('bomberman')
+        sprite('bomberman', {
+            animeSpeed: 0.1,
+            frame: 14,
+        }),
+        pos(6,190),
+        { dir: vec2(1,0)},
     ])
-
 })
 
 go('game');
